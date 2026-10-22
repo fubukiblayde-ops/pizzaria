@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Home Pizzas | Novo Gama</title>
-	<style>
-		:root{--red:#df492f;--ink:#241b16;--muted:#746c65;--cream:#fffaf3}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial, sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.top{display:flex;justify-content:space-between;gap:12px;padding:11px 7%;background:#201914;color:#fff;font-size:14px}.open{color:#b9e9a3}header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 7%;background:#fff}.brand{font-size:23px;font-weight:900;white-space:nowrap}.brand span{color:var(--red)}nav{display:flex;gap:22px;font-size:14px;font-weight:bold;color:#625a53}nav a:hover{color:var(--red)}.search{position:relative;width:290px}.search input{width:100%;padding:12px 14px 12px 39px;border:1px solid #e8e0d7;border-radius:12px;background:#faf8f5;outline:none}.search input:focus{border-color:var(--red)}.search b{position:absolute;left:13px;top:11px}.hero{margin:14px 6% 0;min-height:350px;padding:48px 7%;display:flex;align-items:center;position:relative;overflow:hidden;border-radius:22px;color:#fff;background:radial-gradient(circle at 78%,#754123,#342017 45%,#211914 80%)}.hero:after{content:'🍕';position:absolute;right:8%;font-size:clamp(130px,23vw,245px);filter:drop-shadow(0 15px 15px #0006)}.copy{position:relative;z-index:1;max-width:510px}.eyebrow{color:#ffc96a;font-size:13px;font-weight:bold;letter-spacing:1px;text-transform:uppercase}h1{margin:15px 0;font-size:clamp(38px,5vw,59px);line-height:1.04;letter-spacing:-2px}h1 span{color:#ffb844}.hero p{max-width:400px;color:#e6d9ce;line-height:1.6}.cta{display:inline-block;margin-top:8px;padding:14px 19px;border-radius:10px;background:var(--red);color:#fff;font-weight:bold}.main{padding:36px 7% 50px}.heading{margin-bottom:18px}.heading h2{margin:0;font-size:27px}.heading p{margin:7px 0;color:var(--muted);font-size:14px}.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}.chip{padding:9px 15px;border:1px solid #e8e0d7;border-radius:24px;background:#fff;color:#514943;font-weight:bold;font-size:13px;cursor:pointer}.chip.active,.chip:hover{background:var(--ink);border-color:var(--ink);color:#fff}.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{overflow:hidden;border:1px solid #eee7de;border-radius:16px;background:#fff}.photo{height:145px;overflow:hidden;background:linear-gradient(140deg,#fff0d7,#f5d5b2)}.photo img{width:100%;height:100%;display:block;object-fit:cover}.photo.drink{background:linear-gradient(140deg,#e8f4ff,#cce5f1)}.photo.burger{background:linear-gradient(140deg,#ffe7bd,#f1c47d)}.photo.fries{background:linear-gradient(140deg,#fff2c9,#f5d777)}.details{padding:14px}.title{display:flex;justify-content:space-between;align-items:start;gap:6px}.title h3{margin:0;font-size:15px}.badge{padding:4px 7px;border-radius:15px;background:#fff0e9;color:#a34b2b;font-size:9px;font-weight:bold;white-space:nowrap}.desc{min-height:34px;margin:8px 0 13px;color:var(--muted);font-size:12px;line-height:1.45}.bottom{display:flex;justify-content:space-between;align-items:center}.price{font-size:18px;font-weight:900}.time{display:block;margin-top:4px;color:var(--muted);font-size:11px}.add{width:34px;height:34px;border:0;border-radius:9px;background:#fff0e9;color:var(--red);font-size:22px;font-weight:bold;cursor:pointer}.add:hover{background:var(--red);color:#fff}.empty{display:none;padding:22px;text-align:center;color:var(--muted)}.extras{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:35px}.box{padding:21px;border:1px solid #eee7de;border-radius:16px;background:#fff}.box h3{margin:0 0 8px}.box p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.stars{display:flex;gap:5px;margin:12px 0 5px}.stars button{border:0;background:none;color:#d6cdc2;font-size:29px;cursor:pointer}.stars button.selected,.stars button:hover{color:#f4b942}#rating-message{color:var(--muted);font-size:12px}footer{display:flex;justify-content:space-between;gap:15px;padding:22px 7%;background:#201914;color:#ddd3c8;font-size:13px}footer strong{color:white}@media(max-width:850px){nav{display:none}.products{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.top{padding:10px 5%;font-size:12px}header{padding:15px 5%;flex-wrap:wrap}.search{order:3;width:100%}.hero{margin:6px 4% 0;min-height:360px;padding:35px 7%;align-items:flex-start}.hero:after{right:0;bottom:-25px;font-size:140px}.hero p{max-width:280px}.main{padding:29px 5% 40px}.products{gap:10px}.photo{height:112px}.details{padding:11px}.title h3{font-size:13px}.badge{font-size:8px}.desc{font-size:11px}.extras{grid-template-columns:1fr}footer{flex-direction:column}}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Pizzas | Novo Gama</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<footer>
-    <p>&copy; 2026 Meu Site. Todos os direitos reservados.</p>
-    <p>Hoje é <span id="data-hora"></span></p>
-</footer>
-	<div class="top"><span>📍 Novo Gama, GO</span><span class="open">● Aberto hoje · 18h às 23h</span></div>
+<div class="top"><span>📍 Novo Gama, GO</span><span><span id="data-hora"></span>　<span class="open">● Aberto hoje · 18h às 23h</span></span></div>
 	<header>
 		<a class="brand" href="#inicio">🍕 home <span>pizzas</span></a>
 		<nav aria-label="Navegação"><a href="#inicio">Início</a><a href="#cardapio">Cardápio</a><a href="#avaliacao">Avalie a loja</a></nav>
-		<label class="search"><b>⌕</b><input id="search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos"></label>
+		<div class="header-actions">
+		  <label class="search"><b>⌕</b><input id="search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produtos"></label>
+		  <button class="cart-button" id="open-cart" type="button" aria-label="Abrir carrinho">
+		    <span aria-hidden="true">🛒</span><span class="cart-label">Carrinho</span><span class="cart-count" id="cart-count">0</span>
+		  </button>
+		</div>
 	</header>
 	<section class="hero" id="inicio"><div class="copy"><div class="eyebrow">Sabor que reúne todo mundo</div><h1>Sua fome merece<br>uma <span>fatia feliz.</span></h1><p>Pizzas caprichadas, lanches deliciosos e acompanhamentos para deixar seu dia mais gostoso.</p><a class="cta" href="#cardapio">Ver cardápio　→</a></div></section>
 	<main class="main">
@@ -36,31 +35,23 @@
 		</section>
 		<section class="extras"><div class="box" id="avaliacao"><h3>⭐ Avalie a loja</h3><p>Gostou da experiência? Sua opinião ajuda a Home Pizzas a melhorar!</p><div class="stars" role="group" aria-label="Avalie de uma a cinco estrelas"><button data-score="1" aria-label="1 estrela">★</button><button data-score="2" aria-label="2 estrelas">★</button><button data-score="3" aria-label="3 estrelas">★</button><button data-score="4" aria-label="4 estrelas">★</button><button data-score="5" aria-label="5 estrelas">★</button></div><span id="rating-message">Toque nas estrelas para avaliar.</span></div><div class="box"><h3>📍 Estamos em Novo Gama</h3><p>Peça suas pizzas, bebidas e lanches favoritos. Consulte a disponibilidade de entrega para o seu endereço.</p></div></section>
 	</main>
-		<section id="clientes" class="main">
-  <div class="heading">
-    <h2>Clientes de demonstração</h2>
-    <p>Exemplos de perfis gerados pela API.</p>
-  </div>
-
-  <div id="lista-clientes" class="clientes">
-    Carregando clientes...
-  </div>
-</section>
 	<footer><strong>🍕 home pizzas</strong><span>Feito com carinho em Novo Gama, GO</span></footer>
-	<script>
-		const search=document.getElementById('search'), cards=[...document.querySelectorAll('.card')], chips=[...document.querySelectorAll('.chip')];let category='todos';
-		function filterProducts(){const term=search.value.trim().toLocaleLowerCase('pt-BR');let count=0;cards.forEach(card=>{const show=(category==='todos'||card.dataset.category===category)&&(card.dataset.name.includes(term)||card.textContent.toLocaleLowerCase('pt-BR').includes(term));card.hidden=!show;if(show)count++});document.getElementById('empty').style.display=count?'none':'block'}
-		search.addEventListener('input',filterProducts);chips.forEach(chip=>chip.addEventListener('click',()=>{chips.forEach(item=>item.classList.remove('active'));chip.classList.add('active');category=chip.dataset.category;filterProducts()}));
-		const stars=[...document.querySelectorAll('.stars button')];stars.forEach(star=>star.addEventListener('click',()=>{const score=Number(star.dataset.score);stars.forEach(item=>item.classList.toggle('selected',Number(item.dataset.score)<=score));document.getElementById('rating-message').textContent=`Obrigado pela sua avaliação de ${score} estrela${score>1?'s':''}!`}));
-	const botoesAdicionar = document.querySelectorAll('.add');
-        botoesAdicionar.forEach(botao => {
-            botao.addEventListener('click', () => {
-                alert('🍕 Item adicionado ao carrinho com sucesso!');
-            });
-        });
-	</script>
-    <script src="scripts/script.js"></script>
-</body>
-</html>
+
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true">
+  <div class="cart-head">
+    <h2 id="cart-title">🛒 Meu carrinho</h2>
+    <button class="cart-close" id="close-cart" type="button" aria-label="Fechar carrinho">×</button>
+  </div>
+  <div class="cart-items" id="cart-items" aria-live="polite"></div>
+  <div class="cart-status" id="cart-status" role="status"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+    <button class="checkout-button" id="checkout-button" type="button" disabled>Finalizar pedido</button>
+    <p class="cart-note">Seus itens ficam salvos neste navegador. Ao finalizar, o site tentará enviar o pedido para a API do servidor.</p>
+  </div>
+</aside>
+<script src="script.js"></script>
+
 </body>
 </html>
