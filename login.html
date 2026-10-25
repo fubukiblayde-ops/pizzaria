@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login | Pizzaria</title>
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: grid;
+			place-items: center;
+			padding: 24px;
+			background: #f7eee4;
+			color: #30251f;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		.card {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			width: min(900px, 100%);
+			min-height: 520px;
+			overflow: hidden;
+			background: #fffdf9;
+			border-radius: 20px;
+			box-shadow: 0 18px 55px #44251724;
+		}
+		.intro {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 38px;
+			color: white;
+			background: linear-gradient(145deg, #bd432b, #70291f);
+		}
+		.brand { font-size: 20px; font-weight: 800; }
+		.brand span { color: #ffd37b; }
+		.intro-copy { max-width: 330px; }
+		.intro h1 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 44px); line-height: 1.08; }
+		.intro p { margin: 0; color: #ffede1; line-height: 1.6; }
+		.pizza { align-self: flex-end; font-size: 90px; }
+		.content { align-self: center; padding: 48px clamp(25px, 6vw, 64px); }
+		h2 { margin: 0 0 8px; font-size: 28px; }
+		.subtitle { margin: 0 0 25px; color: #766c65; line-height: 1.5; }
+		.tabs { display: flex; gap: 24px; margin-bottom: 24px; border-bottom: 1px solid #e8ded5; }
+		.tab {
+			padding: 0 0 11px;
+			border: 0;
+			border-bottom: 2px solid transparent;
+			background: none;
+			color: #766c65;
+			font-size: 15px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+		.tab[aria-selected="true"] { border-color: #bd432b; color: #bd432b; }
+		.field { margin-bottom: 17px; }
+		label { display: block; margin-bottom: 7px; font-size: 14px; font-weight: 700; }
+		input {
+			width: 100%;
+			padding: 13px 14px;
+			border: 1px solid #ded4cb;
+			border-radius: 9px;
+			background: white;
+			color: #30251f;
+			font: inherit;
+		}
+		input:focus { outline: 2px solid #bd432b55; border-color: #bd432b; }
+		.submit {
+			width: 100%;
+			margin-top: 6px;
+			padding: 14px;
+			border: 0;
+			border-radius: 9px;
+			background: #bd432b;
+			color: white;
+			font-size: 15px;
+			font-weight: 700;
+			cursor: pointer;
+		}
+		.submit:hover { background: #a73824; }
+		.message { min-height: 20px; margin: 12px 0 0; color: #a73824; font-size: 14px; }
+		[hidden] { display: none !important; }
+		@media (max-width: 650px) {
+			body { padding: 14px; }
+			.card { grid-template-columns: 1fr; }
+			.intro { min-height: 190px; padding: 24px; }
+			.intro-copy { max-width: 260px; }
+			.intro h1 { font-size: 29px; }
+			.pizza { position: absolute; right: 28px; top: 34px; font-size: 68px; }
+			.content { padding: 30px 24px; }
+		}
+	</style>
+</head>
+<body>
+	<main class="card">
+		<section class="intro" aria-label="Pizzaria">
+			<div class="brand">Forno <span>&</span> Fatia</div>
+			<div class="intro-copy">
+				<h1>Sua pizza favorita, quentinha até você.</h1>
+				<p>Entre ou crie sua conta para pedir pelo nosso delivery.</p>
+			</div>
+			<span class="pizza" aria-hidden="true">🍕</span>
+		</section>
+
+		<section class="content" aria-labelledby="title">
+			<h2 id="title">Boas-vindas!</h2>
+			<p class="subtitle" id="subtitle">Entre na sua conta para continuar.</p>
+			<div class="tabs" role="tablist" aria-label="Acesso à conta">
+				<button class="tab" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-form">Entrar</button>
+				<button class="tab" id="register-tab" type="button" role="tab" aria-selected="false" aria-controls="register-form">Criar conta</button>
+			</div>
+
+			<form id="login-form">
+				<div class="field">
+					<label for="login-email">E-mail</label>
+					<input id="login-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required>
+				</div>
+				<div class="field">
+					<label for="login-password">Senha</label>
+					<input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha" required>
+				</div>
+				<button class="submit" type="submit">Entrar na minha conta</button>
+			</form>
+
+			<form id="register-form" hidden>
+				<div class="field">
+					<label for="register-email">E-mail</label>
+					<input id="register-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required disabled>
+				</div>
+				<div class="field">
+					<label for="register-password">Senha</label>
+					<input id="register-password" name="password" type="password" autocomplete="new-password" placeholder="Crie uma senha" required disabled>
+				</div>
+				<div class="field">
+					<label for="confirm-password">Confirme a senha</label>
+					<input id="confirm-password" name="password-confirmation" type="password" autocomplete="new-password" placeholder="Digite a senha novamente" required disabled>
+				</div>
+				<button class="submit" type="submit">Criar minha conta</button>
+			</form>
+			<p class="message" id="message" role="status" aria-live="polite"></p>
+		</section>
+	</main>
+
+	<script>
+		const loginTab = document.querySelector('#login-tab');
+		const registerTab = document.querySelector('#register-tab');
+		const loginForm = document.querySelector('#login-form');
+		const registerForm = document.querySelector('#register-form');
+		const message = document.querySelector('#message');
+
+		function selectForm(register) {
+			loginForm.hidden = register;
+			registerForm.hidden = !register;
+			registerForm.querySelectorAll('input').forEach(input => input.disabled = !register);
+			loginTab.setAttribute('aria-selected', String(!register));
+			registerTab.setAttribute('aria-selected', String(register));
+			document.querySelector('#title').textContent = register ? 'Crie sua conta' : 'Boas-vindas!';
+			document.querySelector('#subtitle').textContent = register
+				? 'Cadastre seu e-mail e senha para pedir.'
+				: 'Entre na sua conta para continuar.';
+			message.textContent = '';
+		}
+
+		loginTab.addEventListener('click', () => selectForm(false));
+		registerTab.addEventListener('click', () => selectForm(true));
+
+		loginForm.addEventListener('submit', event => {
+			event.preventDefault();
+			message.textContent = 'A tela está pronta para ser conectada ao sistema de login.';
+		});
+
+		registerForm.addEventListener('submit', event => {
+			event.preventDefault();
+			const password = document.querySelector('#register-password').value;
+			const confirmation = document.querySelector('#confirm-password').value;
+			if (password !== confirmation) {
+				message.textContent = 'As senhas não coincidem. Verifique e tente novamente.';
+				document.querySelector('#confirm-password').focus();
+				return;
+			}
+			message.textContent = 'A tela está pronta para ser conectada ao sistema de cadastro.';
+		});
+	</script>
+</body>
+</html>
